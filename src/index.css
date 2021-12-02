@@ -49,5 +49,29 @@ nav li a {
 
 .nav-active {
   color: grey;
-  transition: all .3s ease-out;
+  transition: color 100ms linear;
 }
+
+
+.loading{
+  width: 75px;
+  height: 75px;
+  border: 7px solid #ccc;
+  border-radius: 100%;
+  position: relative;
+  border-left-color: lightblue;
+  left: 50%;
+  top: 50px;
+  animation: spinner-loadding 1s infinite linear;
+}
+
+@keyframes spinner-loadding {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
