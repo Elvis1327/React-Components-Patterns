@@ -1,58 +1,34 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { 
     Routes, 
     Route,
     BrowserRouter, 
-    NavLink,
-    Navigate
+    Navigate,
 } from 'react-router-dom';
 
-import logo from '../logo.svg';
-import { LazyPage1, LazyPage3, LazyPage2 } from '../01-lazyload/pages/index';
+import { routes } from './routes';
+import Navbar from '../components/Navbar';
+import '../index.css'
 
 const Navigation = () => {
     return (
-        <BrowserRouter>
-            <div className="main-layout">
-                <nav>
-                    <img src={logo} alt="logo-pic" />
-                    <ul>
-                        <li>
-                            <NavLink 
-                                to="/lazy1" 
-                                className={ ({isActive}) => isActive ? 'nav-active' : ''  }>
-                                    LazyPage1
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink 
-                                to="/lazy2" 
-                                className={ ({isActive}) => isActive ? 'nav-active' : ''  }>
-                                    LazyPage2
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink 
-                                to="/lazy3" 
-                                className={ ({isActive}) => isActive ? 'nav-active' : ''  }>
-                                    LazyPage3
-                            </NavLink>
-                        </li>
-                    </ul>
-                </nav>
+        <Suspense fallback={<div className="loading"></div>}>
+            <BrowserRouter>
+                <div className="main-layout">
+                    <Navbar />
+                    <Routes>
+                        {routes.map(({Component: Mio, path, to}) => (
+                            <Route key={to} path={path} element={<Mio />} />
+                        ))}
+                        <Route path="/*" element={<Navigate to={ routes[0].to } replace />} />
+                    </Routes>
 
-                <Routes>
-                    <Route path="lazy1" element={<LazyPage1 />} />
-                    <Route path="lazy2" element={<LazyPage2 />} />
-                    <Route path="lazy3" element={<LazyPage3 />} />
-
-                    <Route path="/*" element={<Navigate to="/lazy1" replace />} />
-                </Routes>
-
-            </div>
-        </BrowserRouter>
+                </div>
+            </BrowserRouter>
+        </Suspense>
     )
 }
 ;
+
 
 export default Navigation
