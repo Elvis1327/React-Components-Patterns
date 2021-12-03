@@ -8,7 +8,8 @@ import {
     Navigate
 } from 'react-router-dom';
 
-import logo from '../logo.svg'
+import logo from '../02-ocmponent-patterns/assets/logo.svg';
+import ShoopingPage from '../02-ocmponent-patterns/pages/ShoopingPage';
 
 const Navigation = () => {
     return (
@@ -21,7 +22,7 @@ const Navigation = () => {
                             <NavLink 
                                 to="/" 
                                 className={ ({isActive}) => isActive ? 'nav-active' : ''  }>
-                                    Home
+                                    Shoopping
                             </NavLink>
                         </li>
                         <li>
@@ -44,7 +45,7 @@ const Navigation = () => {
                 <Routes>
                     <Route path="about" element={<h1>About</h1>} />
                     <Route path="/users" element={<h1>Users</h1>} />
-                    <Route path="/" element={<h1>Home</h1>} />
+                    <Route path="/" element={<ShoopingPage />} />
 
                     <Route path="/*" element={<Navigate to="/" replace />} />
                 </Routes>
