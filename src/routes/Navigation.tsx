@@ -2,14 +2,13 @@ import React from 'react';
 import { 
     Routes, 
     Route, 
-    Link, 
     BrowserRouter, 
     NavLink,
     Navigate
 } from 'react-router-dom';
 
 import logo from '../02-ocmponent-patterns/assets/logo.svg';
-import ShoopingPage from '../02-ocmponent-patterns/pages/ShoopingPage';
+import { ShoppingPage } from '../02-ocmponent-patterns/pages/ShoopingPage';
 
 const Navigation = () => {
     return (
@@ -45,7 +44,7 @@ const Navigation = () => {
                 <Routes>
                     <Route path="about" element={<h1>About</h1>} />
                     <Route path="/users" element={<h1>Users</h1>} />
-                    <Route path="/" element={<ShoopingPage />} />
+                    <Route path="/" element={<ShoppingPage />} />
 
                     <Route path="/*" element={<Navigate to="/" replace />} />
                 </Routes>

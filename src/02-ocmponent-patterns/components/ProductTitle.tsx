@@ -9,7 +9,7 @@ interface Props {
     style?: CSSProperties;
 }
 
-export const ProudctTitle = ({title, className, style}: Props) => {
+export const ProductTitle = ({title, className, style}: Props) => {
 
     const { product } = useContext(ProductContext);
 

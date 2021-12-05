@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+
 
 
 export interface Product {
@@ -14,5 +14,9 @@ export interface ProductContextProps {
 
 export interface onChangeArgs {
     product: Product;
-    counter: number;
+    count: number;
+}
+
+export interface ProductInCart extends Product {
+    count: number
 }
