@@ -11,3 +11,8 @@ export interface ProductContextProps {
     counter: number;
     product: Product
 }
+
+export interface onChangeArgs {
+    product: Product;
+    counter: number;
+}
