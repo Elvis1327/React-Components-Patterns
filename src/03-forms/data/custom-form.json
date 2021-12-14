@@ -1,0 +1,67 @@
+[
+    {
+        "type": "input",
+        "name": "firstName",
+        "placeholder": "Elvis",
+        "label": "First Name",
+        "value": "",
+        "validations": [
+            {
+                "type": "required"
+            },
+            {
+                "type": "minLength",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "type": "input",
+        "name": "lastName",
+        "placeholder": "LastName",
+        "label": "Last Name",
+        "value": "",
+        "validations": [
+            {
+                "type": "required"
+            }
+        ]
+    },
+    {
+        "type": "input",
+        "name": "email",
+        "placeholder": "Email",
+        "label": "Email",
+        "value": "",
+        "validations": [
+            {
+                "type": "required"
+            }
+        ]
+    },
+    {
+        "type": "select",
+        "name": "jobType",
+        "label": "Job Type",
+        "value": "",
+        "options": [
+            {
+                "id": 1,
+                "label": "Junior Developer"
+            },
+            {
+                "id": 2,
+                "label": "Senior Developer"
+            },
+            {
+                "id": 3,
+                "label": "Cyber Security"
+            }
+        ],
+        "validations": [
+            {
+                "type": "required"
+            }
+        ]
+    }
+]

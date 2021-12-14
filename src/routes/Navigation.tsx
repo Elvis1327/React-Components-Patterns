@@ -11,7 +11,9 @@ import {
     FormikAbstractation, 
     FormikBasicPage, 
     FormikYupPage, 
-    FormikComponents 
+    FormikComponents, 
+    RegisterFormikPage,
+    DynamicForm
     } from '../03-forms/pages';
 import { Navbar } from '../shared/Navbar';
 
@@ -27,6 +29,8 @@ const Navigation = () => {
                     <Route path="/formik-yup" element={<FormikYupPage />} />
                     <Route path="/formik-components" element={<FormikComponents />} />
                     <Route path="/formik-abstractation" element={<FormikAbstractation />} />
+                    <Route path="/register-formik-page" element={<RegisterFormikPage />} />
+                    <Route path="/dynamic-form" element={<DynamicForm />} />
 
                     <Route path="/" element={<Navigate to="/register" />} />
                 </Routes>

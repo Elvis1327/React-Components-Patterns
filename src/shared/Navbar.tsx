@@ -44,6 +44,20 @@ export const Navbar = () => {
                                     Formik Abstractation
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink 
+                                to="/register-formik-page" 
+                                className={ ({isActive}) => isActive ? 'nav-active' : ''  }>
+                                    Register Formik Page
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink 
+                                to="/dynamic-form" 
+                                className={ ({isActive}) => isActive ? 'nav-active' : ''  }>
+                                    Dynamic Form
+                            </NavLink>
+                        </li>
                     </ul>
                 </nav>
         </div>
